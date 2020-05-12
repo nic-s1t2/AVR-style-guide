@@ -14,10 +14,17 @@
 ## 0. Project Specific Information
 
 ```
-Project specific information goes here
-Class prefixes
-Specific considerations
-Plugin/module information
+5 Projects + Shared assets
+
+SHARED
+TARGET TRIANGULATION
+BATTERY ROAD MOVE
+RECON
+LIVE FIRE ACTIVITES
+MULTIROOM
+
+Make project codes nic
+
 ```
 
 <a name="anc"></a>
