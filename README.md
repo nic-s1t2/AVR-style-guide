@@ -34,21 +34,21 @@ The precise naming convention used varies depending on both project and file-typ
 
 Documents to do with the project should always be prefixed with the `ALL` prefix followed by the specific project code, some examples:
 
-`AV_SH_StyleGuide` 	<- a style guide for all the projects
-`AV_US_UserJourney` 	<- a user journey fot the Urban Safety project
-`AV_UC_ChangeLog`	<- changelog of the Urban Upgrade project
+`AV_SH_StyleGuide` 	<- a style guide for all the projects  
+`AV_US_UserJourney` 	<- a user journey fot the Urban Safety project  
+`AV_UC_ChangeLog`	<- changelog of the Urban Upgrade project  
 
 If version numbers are required for these documents, they should follow the project code thusly:
 
-`AV_SH_StyleGuide_v1.0`
-`AV_US_UserJourney_v2.2`
-`AV_UC_ChangeLog_v1.5`
+`AV_SH_StyleGuide_v1.0`  
+`AV_US_UserJourney_v2.2`  
+`AV_UC_ChangeLog_v1.5`  
 
 Lastly, if a date code is to be included on a file, then it should be in the `YYYYMMDD` format and immediatly follow the version code:
 
-`AV_SH_StyleGuide_v1.0_20200516`
-`AV_US_UserJourney_v2.2_20200530`
-`AV_UC_ChangeLog_v1.5_20200601`
+`AV_SH_StyleGuide_v1.0_20200516`  
+`AV_US_UserJourney_v2.2_20200530`  
+`AV_UC_ChangeLog_v1.5_20200601`  
 
 ##### 0.1.1.2 Source Files
 
@@ -57,9 +57,9 @@ Generally are of the following formats: psd, mb, ma, sub
 
 They should be kept in the [appropriate folder](#0.2), and follow a similar naming methodology as other documents, so:
 
-`AV_SH_Solider01.ma`		<- a soldier model shared between all projects
-`AV_TS_SandboxMap.psd`		<- a 2d map of the operations area for the Target Safety project
-`AV_CR_ArtilleryFire.wav`	<- raw audio for cannoon fire
+`AV_SH_Solider01.ma`		<- a soldier model shared between all projects  
+`AV_TS_SandboxMap.psd`		<- a 2d map of the operations area for the Target Safety project  
+`AV_CR_ArtilleryFire.wav`	<- raw audio for cannoon fire  
 
 Of note, **do not** include file version numbers or date codes for these assets, as we will let perforce handle that internally.
 
