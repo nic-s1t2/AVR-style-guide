@@ -50,6 +50,7 @@ Lastly, if a date code is to be included on a file, then it should be in the `YY
 `AV_US_UserJourney_v2.2_20200530`  
 `AV_UC_ChangeLog_v1.5_20200601`  
 
+<a name="0112"></a>
 ##### 0.1.1.2 Source Files
 
 For source files of assets: audio, 3d models, textures, materials.
@@ -72,6 +73,7 @@ becomes:
 
 If you're every unsure, ask someone. Versions are different to variants.
 
+<a name="0113"></a>
 ##### 0.1.1.3 Export Assets
 
 Export assets refers to files that have been exported from their production packages and are ready for import into the engine for use. As always, their location in the [folder structure](#0.2) should mirror their location in the project's *Content* directory exactly, to facilitate more streamlined import/edit/updates.
@@ -131,10 +133,10 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
             |-- UI
     |-- ...
 |-- ProjectNameAssets
-    |-- Exports
+    |-- [Exports](#0113)
     	|-- Art
 	|-- UI
-    |-- SourceFiles
+    |-- [SourceFiles](#0112)
     	|-- Art
 	|-- UI
 </pre>
@@ -145,9 +147,9 @@ The first is the Unreal Engine Project itself, and then dictates the Content Fol
 
 The second is the "Assets" folder, where we keep and commit all working and final assets for import into the Unreal Engine. This has two subdirectories:
 
-**Exports**: This should be a mirror of the Content folder inside the project itself, but containing all the raw assets: PNGs, WAVs, FBXs, etc. This is also the location where they should be imported from, so that should one be updated, you can simply use the "Reimport Asset" functionality of Unreal Engine to update the content in-engine. This should be able to be done from any machine with the correct Perforce configuration.
+[**Exports**](#0113): This should be a mirror of the Content folder inside the project itself, but containing all the raw assets: PNGs, WAVs, FBXs, etc. This is also the location where they should be imported from, so that should one be updated, you can simply use the "Reimport Asset" functionality of Unreal Engine to update the content in-engine. This should be able to be done from any machine with the correct Perforce configuration.
 
-**SourceFiles**: This folder is to contain all the raw, working files, such as Photoshop projects, Audacity projects, Maya scenefiles, etc. Again, this folder structure should mirror the Content folder inside of Unreal itself, to minimise confusion and ensure consistency.
+[**SourceFiles**](#0112): This folder is to contain all the raw, working files, such as Photoshop projects, Audacity projects, Maya scenefiles, etc. Again, this folder structure should mirror the Content folder inside of Unreal itself, to minimise confusion and ensure consistency.
 
 As a visualisation, you can think of the flow of assets, from most raw to completely integrated, as:
 
