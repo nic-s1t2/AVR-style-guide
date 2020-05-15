@@ -13,24 +13,101 @@
 <a name="0"></a>
 ## 0. Project Specific Information
 
-```
-5 Projects + Shared assets
+### 0.1 Project Designations
 
-ALL/CORE - AV
+- ALL	 			- AV
+- SHARED 			- SH/Other(See [Examples](#prj-examp))
+- 1.1.6 TARGET SAFETY MOUNTED 	- TS
+- 3.1.11 URBAN SAFETY 		- US
+- 4.1.2.2 TACTICAL MOVE ART 	- TM
+- 4.1.1.3 CONDUCT RECON ART 	- CR
+- UPGRADE CURRENT URBAN 	- UC
 
-SHARED - SH
-1.1.6 TARGET SAFETY MOUNTED - TS
-3.1.11 URBAN SAFETY - US
-4.1.2.2 TACTICAL MOVE ART - TM
-4.1.1.3 CONDUCT RECON ART - CR
-UPGRADE CURRENT URBAN - UC
+<a name="prj-examp"></a>
+#### 0.1.1 Examples
 
+The precise naming convention used varies depending on both project and file-type. This sections covers these distinctions. As always, use your head and best judgment where possible, and never be afraid to ask someone else for their opinion if something is unclear.
 
-usage examples: AV_TS
-		AV_SH
-		etc
+**Note:** The **SH** prefix currently refers to any shared assets, however when we start to make specific modules or plugins that will be shared across multiple projects they will probably have their own prefix codes. As such, they would follow the same rules as any other project code.
 
-```
+##### 0.1.1.1 Documentation
+
+Documents to do with the project should always be prefixed with the `ALL` prefix followed by the specific project code, some examples:
+
+`AV_SH_StyleGuide` 	<- a style guide for all the projects
+`AV_US_UserJourney` 	<- a user journey fot the Urban Safety project
+`AV_UC_ChangeLog`	<- changelog of the Urban Upgrade project
+
+If version numbers are required for these documents, they should follow the project code thusly:
+
+`AV_SH_StyleGuide_v1.0`
+`AV_US_UserJourney_v2.2`
+`AV_UC_ChangeLog_v1.5`
+
+Lastly, if a date code is to be included on a file, then it should be in the `YYYYMMDD` format and immediatly follow the version code:
+
+`AV_SH_StyleGuide_v1.0_20200516`
+`AV_US_UserJourney_v2.2_20200530`
+`AV_UC_ChangeLog_v1.5_20200601`
+
+##### 0.1.1.2 Source Files
+
+For source files of assets: audio, 3d models, textures, materials.
+Generally are of the following formats: psd, mb, ma, sub
+
+They should be kept in the [appropriate folder](#0.2), and follow a similar naming methodology as other documents, so:
+
+`AV_SH_Solider01.ma`		<- a soldier model shared between all projects
+`AV_TS_SandboxMap.psd`		<- a 2d map of the operations area for the Target Safety project
+`AV_CR_ArtilleryFire.wav`	<- raw audio for cannoon fire
+
+Of note, **do not** include file version numbers or date codes for these assets, as we will let perforce handle that internally.
+
+##### 0.1.1.3 Export Assets
+
+Export assets refers to files that have been exported from their production packages and are ready for import into the engine for use. As always, their location in the [folder structure](#0.2) should mirror their location in the project's *Content* directory exactly, to facilitate more streamlined import/edit/updates.
+
+The common file types for this category are: fbx, wav, png, exr
+
+These files should have the **exact same names** as they would have in-engine, and so must have the appropriate asset type pre/suffixes as [outlined below.](#base-asset-name)
+
+##### 0.1.1.4 Code
+
+As always, each project's code should be prefixed with it's appropriate project code, so:
+
+`CRGameModeBase`
+`TMPlayerObject`
+`USObjectData`
+
+Keep in mind that we haven't, at this time, documented all the modules and plugins we will use, so there may be some additional codes at later times.
+
+<a name="0.2"></a>
+### 0.2 Project Folder Structure
+
+All AV projects will be kept in:
+
+<pre>
+|-- streamsDepot
+    |-- SPINEF
+        |-- ArmyVr
+	    |-- [PROJECT]
+</pre>
+
+Each project will have the following structure:
+
+<pre>
+|-- [PROJECT]
+    |-- [UnrealProjectFolder]
+        |-- ...
+	|-- Content
+	    |-- [ContentDirectories]
+    |-- [ProjectName]Assets
+        |-- Exports
+	    |-- [ContentDirectories]
+	|-- SourceFiles
+</pre>
+
+See [Examples](#2e1) for more info.
 
 <a name="anc"></a>
 <a name="1"></a>
