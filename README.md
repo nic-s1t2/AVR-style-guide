@@ -59,9 +59,18 @@ They should be kept in the [appropriate folder](#0.2), and follow a similar nami
 
 `AV_SH_Solider01.ma`		<- a soldier model shared between all projects  
 `AV_TS_SandboxMap.psd`		<- a 2d map of the operations area for the Target Safety project  
-`AV_CR_ArtilleryFire.wav`	<- raw audio for cannoon fire  
+`AV_CR_ArtilleryFire.wav`	<- raw audio for canon fire  
 
-Of note, **do not** include file version numbers or date codes for these assets, as we will let perforce handle that internally.
+Of note, **do not** include file version numbers or date codes for these assets, as we will let perforce handle that internally. In the instance where we need to fork and/or branch an asset, simply give the new fork an iterated number and keep both in the folder structure, ie:
+
+`AV_SH_Vehicle.ma`
+
+becomes:
+
+`AV_SH_Vehicle_01.ma`  
+`AV_SH_Vehicle_02.ma`  
+
+If you're every unsure, ask someone. Versions are different to variants.
 
 ##### 0.1.1.3 Export Assets
 
@@ -90,24 +99,79 @@ All AV projects will be kept in:
 |-- streamsDepot
     |-- SPINEF
         |-- ArmyVr
-	    |-- [PROJECT]
+	    |-- ArmyVrShared
+	    |-- ArmyVrTargetSafety
+	    |-- ArmyVrUrbanSafety
+	    |-- ArmyVrTacticalMove
+	    |-- ArmyVrConductRecon
+	    |-- ArmyComplex_VR
 </pre>
 
-Each project will have the following structure:
+Each of these projects will be an individual stream which will have the usual `Dev` and `Main` branches.
 
+**All** work should be done in the `Dev` branch, with *no* exceptions.
+
+Equally important as asset names, the directory structure style of a project should be considered law. Asset naming conventions and content directory structure go hand in hand, and a violation of either causes unneeded chaos.
+
+There are multiple ways to lay out the content of a UE4 project. In this style, we use a structure that relies more on filtering and search abilities of the Content Browser for those working with assets to find assets of a specific type instead of another common structure that groups asset types with folders.
+
+> If you are using the prefix [naming convention](#1.2) above, using folders to contain assets of similar types such as `Meshes`, `Textures`, and `Materials` is a redundant practice as asset types are already both sorted by prefix as well as able to be filtered in the content browser.
+
+<a name="2e1"><a>
+### 2e1 Example Perforce Project Folder Setup
 <pre>
-|-- [PROJECT]
-    |-- [UnrealProjectFolder]
-        |-- ...
-	|-- Content
-	    |-- [ContentDirectories]
-    |-- [ProjectName]Assets
-        |-- Exports
-	    |-- [ContentDirectories]
-	|-- SourceFiles
+|-- ProjectName
+    |-- ...
+    |-- Content
+    	|-- <a href="#2.2">ProjectName</a>
+            |-- Art
+            |-- <a href="#2.5">Core</a>
+            |-- <a href="#2.4">Maps</a>
+            |-- <a href="#2.8">MaterialLibrary</a>
+            |-- UI
+    |-- ...
+|-- ProjectNameAssets
+    |-- Exports
+    	|-- Art
+	|-- UI
+    |-- SourceFiles
+    	|-- Art
+	|-- UI
 </pre>
 
-See [Examples](#2e1) for more info.
+Note the two Top Level folders.
+
+The first is the Unreal Engine Project itself, and then dictates the Content Folder contents therein.
+
+The second is the "Assets" folder, where we keep and commit all working and final assets for import into the Unreal Engine. This has two subdirectories:
+
+**Exports**: This should be a mirror of the Content folder inside the project itself, but containing all the raw assets: PNGs, WAVs, FBXs, etc. This is also the location where they should be imported from, so that should one be updated, you can simply use the "Reimport Asset" functionality of Unreal Engine to update the content in-engine. This should be able to be done from any machine with the correct Perforce configuration.
+
+**SourceFiles**: This folder is to contain all the raw, working files, such as Photoshop projects, Audacity projects, Maya scenefiles, etc. Again, this folder structure should mirror the Content folder inside of Unreal itself, to minimise confusion and ensure consistency.
+
+As a visualisation, you can think of the flow of assets, from most raw to completely integrated, as:
+
+**SourceFiles > Exports > Content**
+
+The reasons for this mirrored structure are listed in the following sub-sections.
+
+### Sections
+
+> 2.1 [Folder Names](#structure-folder-names)
+
+> 2.2 [Top-Level Folders](#structure-top-level)
+
+> 2.3 [Developer Folders](#structure-developers)
+
+> 2.4 [Maps](#structure-maps)
+
+> 2.5 [Core](#structure-core)
+
+> 2.6 [`Assets` and `AssetTypes`](#structure-assettypes)
+
+> 2.7 [Large Sets](#structure-large-sets)
+
+> 2.8 [Material Library](#structure-material-library)
 
 <a name="anc"></a>
 <a name="1"></a>
@@ -404,68 +468,7 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 <a name="structure"></a>
 ## 2. Content Directory Structure ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
-Equally important as asset names, the directory structure style of a project should be considered law. Asset naming conventions and content directory structure go hand in hand, and a violation of either causes unneeded chaos.
-
-There are multiple ways to lay out the content of a UE4 project. In this style, we use a structure that relies more on filtering and search abilities of the Content Browser for those working with assets to find assets of a specific type instead of another common structure that groups asset types with folders.
-
-> If you are using the prefix [naming convention](#1.2) above, using folders to contain assets of similar types such as `Meshes`, `Textures`, and `Materials` is a redundant practice as asset types are already both sorted by prefix as well as able to be filtered in the content browser.
-
-<a name="2e1"><a>
-### 2e1 Example Perforce Project Folder Setup
-<pre>
-|-- ProjectName
-    |-- ...
-    |-- Content
-    	|-- <a href="#2.2">ProjectName</a>
-            |-- Art
-            |-- <a href="#2.5">Core</a>
-            |-- <a href="#2.4">Maps</a>
-            |-- <a href="#2.8">MaterialLibrary</a>
-            |-- UI
-    |-- ...
-|-- ProjectNameAssets
-    |-- Exports
-    	|-- Art
-	|-- UI
-    |-- SourceFiles
-    	|-- Art
-	|-- UI
-</pre>
-
-Note the two Top Level folders.
-
-The first is the Unreal Engine Project itself, and then dictates the Content Folder contents therein.
-
-The second is the "Assets" folder, where we keep and commit all working and final assets for import into the Unreal Engine. This has two subdirectories:
-
-**Exports**: This should be a mirror of the Content folder inside the project itself, but containing all the raw assets: PNGs, WAVs, FBXs, etc. This is also the location where they should be imported from, so that should one be updated, you can simply use the "Reimport Asset" functionality of Unreal Engine to update the content in-engine. This should be able to be done from any machine with the correct Perforce configuration.
-
-**SourceFiles**: This folder is to contain all the raw, working files, such as Photoshop projects, Audacity projects, Maya scenefiles, etc. Again, this folder structure should mirror the Content folder inside of Unreal itself, to minimise confusion and ensure consistency.
-
-As a visualisation, you can think of the flow of assets, from most raw to completely integrated, as:
-
-**SourceFiles > Exports > Content**
-
-The reasons for this mirrored structure are listed in the following sub-sections.
-
-### Sections
-
-> 2.1 [Folder Names](#structure-folder-names)
-
-> 2.2 [Top-Level Folders](#structure-top-level)
-
-> 2.3 [Developer Folders](#structure-developers)
-
-> 2.4 [Maps](#structure-maps)
-
-> 2.5 [Core](#structure-core)
-
-> 2.6 [`Assets` and `AssetTypes`](#structure-assettypes)
-
-> 2.7 [Large Sets](#structure-large-sets)
-
-> 2.8 [Material Library](#structure-material-library)
-
+Moved to [0.2](#0.2).
 
 <a name="2.1"></a>
 <a name="structure-folder-names"><a>
