@@ -133,10 +133,10 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
             |-- UI
     |-- ...
 |-- ProjectNameAssets
-    |-- [Exports](#0113)
+    |-- <a href="#0113">Exports</a>
     	|-- Art
 	|-- UI
-    |-- [SourceFiles](#0112)
+    |-- <a href="#0112">SourceFiles</a>
     	|-- Art
 	|-- UI
 </pre>
