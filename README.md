@@ -15,13 +15,22 @@
 
 ### 0.1 Project Designations
 
-- ALL	 			- AV
-- SHARED 			- SH/Other(See [Examples](#prj-examp))
-- 1.1.6 TARGET SAFETY MOUNTED 	- TS
-- 3.1.11 URBAN SAFETY 		- US
-- 4.1.2.2 TACTICAL MOVE ART 	- TM
-- 4.1.1.3 CONDUCT RECON ART 	- CR
-- UPGRADE CURRENT URBAN 	- UC
+| Project			| Prefix				|
+|-------------------------------|---------------------------------------|
+| ALL	 			| AV					|
+| SHARED 			| SH/Other(See [Examples](#prj-examp))	|
+| 1.1.6 TARGET SAFETY MOUNTED 	| TS					|
+| 3.1.11 URBAN SAFETY 		| US					|
+| 4.1.2.2 TACTICAL MOVE ART 	| TM					|
+| 4.1.1.3 CONDUCT RECON ART 	| CR					|
+| UPGRADE CURRENT URBAN 	| UC					|
+|-------------------------------|---------------------------------------|
+
+| Module			| Prefix				|
+|-------------------------------|---------------------------------------|
+| ArmyVR Core Systems		| AC					|
+|-------------------------------|---------------------------------------|
+
 
 <a name="prj-examp"></a>
 #### 0.1.1 Examples
