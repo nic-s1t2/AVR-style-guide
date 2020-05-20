@@ -29,6 +29,7 @@
 | Module			| Prefix				|
 |-------------------------------|---------------------------------------|
 | ArmyVR Core Systems		| AC					|
+| VR Spectator			| VS					|
 
 
 
