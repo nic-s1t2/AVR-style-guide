@@ -15,15 +15,15 @@
 
 ### 0.1 Project Designations
 
-| Project			| Prefix				|
-|-------------------------------|---------------------------------------|
-| ALL	 			| AV					|
-| SHARED 			| SH/Other(See [Examples](#prj-examp))	|
-| 1.1.6 TARGET SAFETY MOUNTED 	| TS					|
-| 3.1.11 URBAN SAFETY 		| US					|
-| 4.1.2.2 TACTICAL MOVE ART 	| TM					|
-| 4.1.1.3 CONDUCT RECON ART 	| CR					|
-| UPGRADE CURRENT URBAN 	| UC					|
+| Project			| Prefix				| Perforce Folder		|
+|-------------------------------|---------------------------------------|-------------------------------|
+| ALL	 			| AV					|				|
+| SHARED 			| SH/Other(See [Examples](#prj-examp))	| ArmyVrShared			|
+| 1.1.6 TARGET SAFETY MOUNTED 	| TS					| TargetSafety			|
+| 3.1.11 URBAN SAFETY 		| US					| UrbanSafety			|
+| 4.1.2.2 TACTICAL MOVE ART 	| TM					| TacticalMove			|
+| 4.1.1.3 CONDUCT RECON ART 	| CR					| ConductRecon			|
+| UPGRADE CURRENT URBAN 	| UC					| UpgradeCurrent		|
 
 
 | Module			| Prefix				|
