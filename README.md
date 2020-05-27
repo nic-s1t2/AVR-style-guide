@@ -30,7 +30,6 @@
 |-------------------------------|---------------------------------------|
 | ArmyVR Core Systems		| AC					|
 | VR Spectator			| VS					|
-| Map Printing			| MP					|
 
 
 <a name="prj-examp"></a>
