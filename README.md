@@ -31,6 +31,7 @@
 | ArmyVR Core Systems		| AC					|
 | VR Spectator			| VS					|
 | Data Merge			| DM					|
+| Scenario Picker		| SP					|
 
 <a name="prj-examp"></a>
 #### 0.1.1 Examples
