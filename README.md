@@ -23,7 +23,7 @@
 | 3.1.11 URBAN SAFETY 		| US					| UrbanSafety			|
 | 4.1.2.2 TACTICAL MOVE ART 	| TM					| TacticalMove			|
 | 4.1.1.3 CONDUCT RECON ART 	| CR					| ConductRecon			|
-| UPGRADE CURRENT URBAN 	| UC					| UpgradeCurrent		|
+| UPGRADE CURRENT URBAN(multi) 	| UC					| UpgradeCurrent		|
 
 
 | Module			| Prefix				|
