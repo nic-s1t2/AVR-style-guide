@@ -92,7 +92,18 @@ The common file types for this category are: fbx, wav, png, exr
 
 These files should have the **exact same names** as they would have in-engine, and so must have the appropriate asset type pre/suffixes as [outlined below.](#base-asset-name)
 
-##### 0.1.1.4 Code
+
+##### 0.1.1.4 Assets And Project directorys
+Some digital Assets will end up going in the project you are working on, and some should go into the Shared project SHARED (SH).
+This depends on if this asset will be used in mutlbile projects, so for example the master material for landscapes should be placed into the SHARED (SH) project as per the rules shown in [2e1 Example Perforce Project Folder Setup](#2e1). 
+
+Each project will have access to the SHARED content as it will be migrated accross on a daily shedual (or on request to NIC). As a general rule, Master materials and anything that would fall into the MaterialLibrary folder should be shared- where as project specific assets that impliment these materials, such as Material instances, textures and 3D assets- should be within the projects that use them.
+
+The reason for this is we want as little Master Materials in a project as possible, and want to keep these in one central location to easily tweak them as needed for all projects. 
+
+
+
+##### 0.1.1.5 Code
 
 As always, each project's code should be prefixed with it's appropriate project code, so:
 
